@@ -85,11 +85,5 @@ app.delete("/api/movies/:id", async (req, res) => {
 });
 
 db.initialize(process.env.MONGODB_CONN_STRING)
-  .then(() => {
-    app.listen(port, () => {
-      console.log(`server listening on: ${port}`);
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+  .then(() => app.listen(port))
+  .catch();
