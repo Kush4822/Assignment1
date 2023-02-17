@@ -28,7 +28,7 @@ app.get("/api/movies", async (req, res) => {
   try {
     // const page = req.query.page ? req.query.page : 1;
     // const perPage = req.query.perPage ? req.query.perPage : 5;
-    const title = req.query.title & req.query.title;
+    const title = req.query.title && req.query.title;
 
     const movies = await db.getAllMovies(
       req.query.page,
